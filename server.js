@@ -1,16 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 const morgan = require('morgan');
 const path = require('path');
 const colors = require('colors');
 const cookieParser = require('cookie-parser');
-const connectDB = require('./config/db');
+
+// Load env vars
+dotenv.config({ path: './config/config.env' });
 
 // Connect Database
 connectDB();
-
-// Load env vars
-dotenv.config();
 
 const app = express();
 
