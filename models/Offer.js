@@ -14,6 +14,23 @@ const OfferSchema = new Schema({
       type: String,
       required: true
     },
+    address: {
+      street1: {
+        type: String,
+        required: true
+      },
+      street2: {
+        type: String
+      },
+      city: {
+        type: String,
+        required: true
+      },
+      zip: {
+        type: String,
+        required: true
+      }
+    },
     contact: {
       website: {
         type: String

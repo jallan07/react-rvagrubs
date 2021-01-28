@@ -9,16 +9,21 @@ const cookieParser = require('cookie-parser');
 // Load env vars
 dotenv.config({ path: './config/config.env' });
 
+// route files
+const offers = require('./routes/offers');
+
 // Connect Database
 connectDB();
 
 const app = express();
 
-// Body parser
-app.use(express.json({ extended: false }));
+// dev logging middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
-// cookie parse
-app.use(cookieParser());
+// mount the router to the specific route files
+app.use('/api/v1/offers', offers);
 
 const PORT = process.env.PORT || 8080;
 
@@ -26,13 +31,6 @@ const PORT = process.env.PORT || 8080;
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-
-// Set static folder
-// app.use(express.static(path.join(__dirname, 'client/public')));
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
 const server = app.listen(PORT, () =>
   console.log(
