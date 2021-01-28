@@ -32,12 +32,16 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-const server = app.listen(PORT, () =>
+const server = app.listen(PORT, () => {
   console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port http://localhost:${PORT}`
-      .yellow.bold
-  )
-);
+    'Server running in ' + `${process.env.NODE_ENV}`.rainbow.bold + ' mode'
+  );
+  console.log(
+    'Server listening on port ' +
+      `http://localhost:${PORT}`.yellow.bold.underline +
+      '.'
+  );
+});
 
 // handle unhandled promise rejections
 // if there is an error connecting to the server or database, this will catch the error and display a message for us
