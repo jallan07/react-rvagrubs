@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT || 8080;
 
-// Dev logging middleware
+// dev logging middleware
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
@@ -34,9 +34,17 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(PORT, () =>
+const server = app.listen(PORT, () =>
   console.log(
     `Server running in ${process.env.NODE_ENV} mode on port http://localhost:${PORT}`
       .yellow.bold
   )
 );
+
+// handle unhandled promise rejections
+// if there is an error connecting to the server or database, this will catch the error and display a message for us
+process.on('unhandledRejection', (err, promise) => {
+  console.log(`Error: ${err.message}`);
+  // close the server connection and exit the process with a failure flag (1)
+  server.close(() => process.exit(1));
+});
