@@ -30,7 +30,7 @@ function Login() {
           <Card className="rounded shadow">
             <Card.Body>
               <h2 className="text-center mb-4">
-                <i className="fas fa-lock fa-sm"></i> LOG IN
+                <i className="fas fa-lock fa-sm"></i> log in
               </h2>
               {/* if there IS an error, then display the error here in the Alert element */}
               {error && <Alert variant="danger">{error}</Alert>}

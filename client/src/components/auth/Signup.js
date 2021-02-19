@@ -39,7 +39,7 @@ function Signup() {
           <Card className="rounded shadow">
             <Card.Body>
               <h2 className="text-center">
-                <i className="fas fa-user fa-sm"></i> SIGN UP
+                <i className="fas fa-user fa-sm"></i> sign up
               </h2>
               <p className="text-center mb-3 small">
                 <em>All fields are required</em>
