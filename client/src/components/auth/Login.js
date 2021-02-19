@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
+import { Form, Button, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
   // pull out the signup function from the AuthContext.js file
-  // create the error state object and method
-  const [error, setError] = useState();
+
   // loading state and method for disabling duplicate submit button clicks
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +32,7 @@ function Login() {
                 <i className="fas fa-lock fa-sm"></i> log in
               </h2>
               {/* if there IS an error, then display the error here in the Alert element */}
-              {error && <Alert variant="danger">{error}</Alert>}
+              {/* {error && <Alert variant="danger">{error}</Alert>} */}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                   <Form.Control

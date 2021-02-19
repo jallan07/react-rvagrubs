@@ -6,7 +6,7 @@ const alertReducer = (state = [], action) => {
     case SET_ALERT:
       return [...state, action.msg];
     case REMOVE_ALERT:
-      return (state = []);
+      return state.filter((alert) => alert.msg !== action.msg);
     default:
       return state;
   }

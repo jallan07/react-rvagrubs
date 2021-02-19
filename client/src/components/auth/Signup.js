@@ -24,7 +24,7 @@ function Signup() {
   // loading state and method for disabling duplicate submit button clicks
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
     // if passwords don't match
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -34,7 +34,7 @@ function Signup() {
     console.log('signup submit');
     // after this is done waiting for signup, set loading back to false
     setLoading(false);
-  };
+  }
 
   // redux mapping the alerts array in global store to the errors variable
   const errors = useSelector((state) => state.alerts);
