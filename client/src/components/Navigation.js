@@ -4,7 +4,7 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand className="ml-5" href="#home">
+      <Navbar.Brand className="ml-5 brand" href="#home">
         RVA GRUBS
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
