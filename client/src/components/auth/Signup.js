@@ -10,6 +10,11 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+// redux
+import { setAlert } from '../../redux/actions/setAlert';
+
+import { useSelector } from 'react-redux';
+
 function Signup() {
   const fnameRef = useRef();
   const lnameRef = useRef();
@@ -18,16 +23,27 @@ function Signup() {
   const passwordConfirmRef = useRef();
 
   // create the error state object and method
-  const [error, setError] = useState();
+  // const [error, setError] = useState();
+
   // loading state and method for disabling duplicate submit button clicks
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    // if the passwords ddo not match, then push a new error into the error state object
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      // exit out of the function immediately when the mismatch occurs
+      // return setError('Passwords do not match');
+      setAlert('Passwords do not match');
+    }
+
     console.log('signup submit');
     // after this is done waiting for signup, set loading back to false
     setLoading(false);
   }
+
+  const errors = useSelector((state) => state.alerts);
 
   return (
     <div className="wrapper auth">
@@ -45,7 +61,7 @@ function Signup() {
                 <em>All fields are required</em>
               </p>
               {/* if there IS an error, then display the error here in the Alert element */}
-              {error && <Alert variant="danger">{error}</Alert>}
+              {errors.length > 0 && <Alert variant="danger">{errors}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col>
