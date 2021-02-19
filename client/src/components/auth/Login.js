@@ -1,5 +1,5 @@
 import React, { useRef, useState, useHistory } from 'react';
-import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -21,36 +21,53 @@ function Login() {
   }
 
   return (
-    <div>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">LOG IN</h2>
-          {/* if there IS an error, then display the error here in the Alert element */}
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required></Form.Control>
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Log In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3"></div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Don't have an account yet? <Link to="/signup">Sign up.</Link>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: '100vh' }}
+    >
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <Card className="rounded shadow">
+          <Card.Body>
+            <h2 className="text-center mb-4">
+              <i className="fas fa-lock"></i> LOG IN
+            </h2>
+            {/* if there IS an error, then display the error here in the Alert element */}
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Control
+                  type="email"
+                  ref={emailRef}
+                  autoComplete="off"
+                  placeholder="Email"
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group id="password">
+                <Form.Control
+                  type="password"
+                  ref={passwordRef}
+                  autoComplete="off"
+                  placeholder="Password"
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Button
+                disabled={loading}
+                className="w-100 btn btn-success"
+                type="submit"
+              >
+                Log In
+              </Button>
+            </Form>
+            <div className="w-100 text-center mt-3"></div>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-4">
+          Don't have an account yet? <Link to="/signup">Sign up.</Link>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
