@@ -4,6 +4,21 @@ h2 {
   font-family: 'Paytone One', sans-serif;
 }
 
+.wrapper.auth {
+  background-color: #ae1f23;
+}
+
+.btn-yellow {
+  background-color: #f4c109;
+  border: #f4c109;
+}
+
+.authLink {
+  color: #ffffff;
+  text-decoration: underline 1px solid white;
+  font-weight: 600;
+}
+
 .small {
   font-size: 12px;
 }

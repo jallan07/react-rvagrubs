@@ -1,4 +1,4 @@
-import React, { useRef, useState, useHistory } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Form,
   Button,
@@ -30,88 +30,94 @@ function Signup() {
   }
 
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: '100vh' }}
-    >
-      <div className="w-100" style={{ maxWidth: '400px' }}>
-        <Card className="rounded shadow">
-          <Card.Body>
-            <h2 className="text-center">
-              <i className="fas fa-user"></i> SIGN UP
-            </h2>
-            <p className="text-center mb-3 small">
-              <em>All fields are required</em>
-            </p>
-            {/* if there IS an error, then display the error here in the Alert element */}
-            {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={handleSubmit}>
-              <Row>
-                <Col>
-                  <Form.Group id="firstname">
-                    <Form.Control
-                      type="text"
-                      placeholder="First name"
-                      ref={fnameRef}
-                      autoComplete="off"
-                      required
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group id="lastname">
-                    <Form.Control
-                      type="text"
-                      placeholder="Last name"
-                      ref={lnameRef}
-                      autoComplete="off"
-                      required
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Form.Group id="email">
-                <Form.Control
-                  type="email"
-                  ref={emailRef}
-                  autoComplete="off"
-                  placeholder="Email"
-                  required
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group id="password">
-                <Form.Control
-                  type="password"
-                  ref={passwordRef}
-                  autoComplete="off"
-                  placeholder="Password"
-                  required
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group id="passwordConfirm">
-                <Form.Control
-                  type="password"
-                  ref={passwordConfirmRef}
-                  autoComplete="off"
-                  placeholder="Confirm your password"
-                  required
-                ></Form.Control>
-              </Form.Group>
-              <Button
-                disabled={loading}
-                className="w-100 btn btn-success"
-                type="submit"
-              >
-                Sign Up
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
-        <div className="w-100 text-center mt-4">
-          Already have an account? <Link to="login">Log in.</Link>
+    <div className="wrapper auth">
+      <Container
+        className="auth d-flex align-items-center justify-content-center"
+        style={{ minHeight: '100vh' }}
+      >
+        <div className="w-100" style={{ maxWidth: '400px' }}>
+          <Card className="rounded shadow">
+            <Card.Body>
+              <h2 className="text-center">
+                <i className="fas fa-user fa-sm"></i> SIGN UP
+              </h2>
+              <p className="text-center mb-3 small">
+                <em>All fields are required</em>
+              </p>
+              {/* if there IS an error, then display the error here in the Alert element */}
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form onSubmit={handleSubmit}>
+                <Row>
+                  <Col>
+                    <Form.Group id="firstname">
+                      <Form.Control
+                        type="text"
+                        placeholder="First name"
+                        ref={fnameRef}
+                        autoComplete="off"
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group id="lastname">
+                      <Form.Control
+                        type="text"
+                        placeholder="Last name"
+                        ref={lnameRef}
+                        autoComplete="off"
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Form.Group id="email">
+                  <Form.Control
+                    type="email"
+                    ref={emailRef}
+                    autoComplete="off"
+                    placeholder="Email"
+                    required
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group id="password">
+                  <Form.Control
+                    type="password"
+                    ref={passwordRef}
+                    autoComplete="off"
+                    placeholder="Password"
+                    required
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group id="passwordConfirm">
+                  <Form.Control
+                    type="password"
+                    ref={passwordConfirmRef}
+                    autoComplete="off"
+                    placeholder="Confirm your password"
+                    required
+                  ></Form.Control>
+                </Form.Group>
+                <Button
+                  disabled={loading}
+                  className="w-100 btn-yellow"
+                  type="submit"
+                >
+                  Sign Up
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+          <div className="w-100 text-center text-light mt-4">
+            Already have an account?{' '}
+            <Link className="authLink" to="login">
+              Log in
+            </Link>
+            .
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 

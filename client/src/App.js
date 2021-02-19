@@ -1,7 +1,6 @@
 // utils
-import { Container } from 'react-bootstrap';
+
 // components
-import Navigation from './components/Navigation';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 // routing
