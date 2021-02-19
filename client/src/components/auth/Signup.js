@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 
 // redux
 import { setAlert } from '../../redux/actions/setAlert';
-
 import { useSelector } from 'react-redux';
 
 function Signup() {
@@ -22,27 +21,22 @@ function Signup() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
-  // create the error state object and method
-  // const [error, setError] = useState();
-
   // loading state and method for disabling duplicate submit button clicks
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // if the passwords ddo not match, then push a new error into the error state object
+    // if passwords don't match
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      // exit out of the function immediately when the mismatch occurs
-      // return setError('Passwords do not match');
-      setAlert('Passwords do not match');
+      // exit out of the function immediately when the mismatch occurs and provide an alert
+      return setAlert('Passwords do not match');
     }
-
     console.log('signup submit');
     // after this is done waiting for signup, set loading back to false
     setLoading(false);
-  }
+  };
 
+  // redux mapping the alerts array in global store to the errors variable
   const errors = useSelector((state) => state.alerts);
 
   return (
