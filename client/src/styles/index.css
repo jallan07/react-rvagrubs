@@ -5,7 +5,12 @@ h2 {
 }
 
 .wrapper.auth {
-  background-color: #ae1f23;
+  display: block;
+  background: url(./img/wave.svg) center right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .btn-yellow {
