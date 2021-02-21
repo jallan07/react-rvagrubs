@@ -6,7 +6,7 @@ h2 {
 
 .wrapper.auth {
   display: block;
-  background: url(./img/wave.svg) center right fixed;
+  background: url(./img/wave.svg) center left fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
