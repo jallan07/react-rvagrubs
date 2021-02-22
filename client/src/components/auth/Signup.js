@@ -12,10 +12,10 @@ import {
 import { Link } from 'react-router-dom';
 
 // components
-import Logo from '../Logo';
+import Logo from '../navigation/Logo';
 
 // redux
-import { setAlert } from '../../redux/actions/setAlert';
+import { setAlert } from '../../redux/actions/alerts/setAlert';
 import { useSelector } from 'react-redux';
 
 function Signup() {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from '../components/Navigation';
+import Links from '../components/navigation/Links';
 
 const Main = () => {
   return (
     <div>
-      <Navigation />
+      <Links />
     </div>
   );
 };

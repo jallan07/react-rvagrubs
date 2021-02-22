@@ -3,7 +3,7 @@ import { Form, Button, Card, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 // components
-import Logo from '../Logo';
+import Logo from '../navigation/Logo';
 
 function Login() {
   const emailRef = useRef();
