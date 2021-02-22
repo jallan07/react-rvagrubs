@@ -20,6 +20,7 @@ function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const userTypeRef = useRef();
 
   // loading state and method for disabling duplicate submit button clicks
   const [loading, setLoading] = useState(false);
@@ -46,7 +47,7 @@ function Signup() {
         style={{ minHeight: '100vh' }}
       >
         <div className="w-100" style={{ maxWidth: '400px' }}>
-          <Card className="rounded shadow">
+          <Card className="rounded shadow auth card">
             <Card.Body>
               <h2 className="text-center">
                 <i className="fas fa-user fa-sm"></i> sign up
@@ -107,6 +108,15 @@ function Signup() {
                     placeholder="Confirm your password"
                     required
                   ></Form.Control>
+                </Form.Group>
+                <Form.Group id="userType">
+                  <Form.Control as="select" ref={userTypeRef} custom required>
+                    <option value="" disabled selected>
+                      Are you a Foodie or a Restaurant?
+                    </option>
+                    <option value="foodie">Foodie</option>
+                    <option value="restaurant">Restaurant</option>
+                  </Form.Control>
                 </Form.Group>
                 <Button
                   disabled={loading}
