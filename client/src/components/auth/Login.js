@@ -26,7 +26,7 @@ function Login() {
       <Navbar bg="" expand="lg" fixed="top">
         <Logo />
       </Navbar>
-      <div className="wrapper auth">
+      <div className="wrapper login">
         <Container
           className="d-flex align-items-center justify-content-center"
           style={{ minHeight: '100vh' }}

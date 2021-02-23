@@ -49,7 +49,7 @@ function Signup() {
       <Navbar bg="" expand="lg" fixed="top">
         <Logo />
       </Navbar>
-      <div className="wrapper auth">
+      <div className="wrapper signup">
         <Container
           className="auth d-flex align-items-center justify-content-center"
           style={{ minHeight: '100vh' }}
