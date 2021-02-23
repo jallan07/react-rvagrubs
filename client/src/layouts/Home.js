@@ -1,6 +1,10 @@
+// utils
 import React from 'react';
-import Links from '../components/navigation/Links';
 import { Container, Card } from 'react-bootstrap';
+
+// components
+import Links from '../components/navigation/Links';
+import Post from '../components/feed/Post';
 
 const Main = () => {
   return (
