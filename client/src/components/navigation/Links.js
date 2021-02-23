@@ -11,7 +11,7 @@ function Navigation() {
   return (
     <>
       {auth.isAuthenticated ? (
-        <Navbar bg="" expand="lg">
+        <Navbar bg="" expand="lg" fixed="top">
           <Logo />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -32,16 +32,18 @@ function Navigation() {
           </Navbar.Collapse>
         </Navbar>
       ) : (
-        <Navbar bg="" expand="lg">
+        <Navbar bg="" expand="lg" fixed="top">
           <Logo />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link className="mx-1" href="/">
-                Home
-              </Nav.Link>
-              <Nav.Link className="mx-1" href="/about">
-                About
+              <Nav.Link
+                className="mx-1"
+                href="https://www.instagram.com/rvagrubs/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fab fa-instagram fa-sm"></i> Follow
               </Nav.Link>
               <Nav.Link className="mx-1" href="/contact">
                 Contact

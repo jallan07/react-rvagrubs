@@ -4,9 +4,25 @@ h2 {
   font-family: 'Paytone One', sans-serif;
 }
 
-.wrapper.auth {
+.wrapper.landing {
   display: block;
-  background: url(./img/wave.svg) center left fixed;
+  background: url(./img/yellow-wave.svg) top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.wrapper.login {
+  display: block;
+  background: url(./img/grey-wave.svg) top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.wrapper.signup {
+  display: block;
+  background: url(./img/red-wave.svg) center left fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
