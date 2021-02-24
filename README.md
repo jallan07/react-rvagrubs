@@ -7,10 +7,11 @@
 1. [Status](#Status)
 2. [Description](#Description)
 3. [Tech Stack](#Tech-Stack)
-4. [Installation](#Installation)
-5. [License](#License)
-6. [Contributions](#Contributions)
-7. [Authors](#Authors)
+4. [Screenshots](#Screenshots)
+5. [Installation](#Installation)
+6. [License](#License)
+7. [Contributions](#Contributions)
+8. [Authors](#Authors)
 
 ---
 
@@ -33,6 +34,16 @@ Receive member-only discounts to all of Richmond's favorite restaurants. Create 
 - Node
 - Express
 - Redux
+- getwaves.io
+
+---
+
+## **Screenshots**
+
+![Homepage](client/public/img/home.png)
+![Signup](client/public/img/signup.png)
+![Login](client/public/img/login.png)
+![Feed](client/public/img/feed.png)
 
 ---
 
