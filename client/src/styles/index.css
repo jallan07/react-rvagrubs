@@ -4,6 +4,11 @@ h2 {
   font-family: 'Paytone One', sans-serif;
 }
 
+.home-info {
+  color: rgb(92, 92, 92);
+  font-weight: 400;
+}
+
 .wrapper.landing {
   display: block;
   background: url(./img/yellow-wave.svg) top center fixed;
