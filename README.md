@@ -23,7 +23,7 @@ Project is **IN DEVELOPMENT**, and has **NOT** been deployed yet. To see up-to-d
 
 ## **Description**
 
-Receive member-only discounts to all of Richmond's favorite restaurants. Create an account today!
+Receive member-only discounts to Richmond's favorite restaurants. Create an account today!
 
 ---
 
